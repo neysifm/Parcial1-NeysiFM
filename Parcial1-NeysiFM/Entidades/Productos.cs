@@ -21,9 +21,9 @@ namespace Parcial1_NeysiFM.Entidades
         {
             ProductosId = 0;
             Descripcion = String.Empty;
-            Existencia = int.Empty;
-            Costo = float.Empty;
-            ValorInventario = Double.Empty;
+            Existencia = 0;
+            Costo = 0;
+            ValorInventario = 0;
         }
     }
 }
