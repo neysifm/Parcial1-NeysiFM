@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using Parcial1_NeysiFM.DAL;
 using Parcial1_NeysiFM.Entidades;
+using System.Linq.Expressions;
 
 namespace Parcial1_NeysiFM.BLL
 {
     public class ProductosBLL
     {
-        public static bool Guardar(Usuarios usuario)
+        public static bool Guardar(Productos producto)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                if (contexto.Usuario.Add(usuario) != null)
+                if (contexto.Producto.Add(producto) != null)
                     paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -36,7 +38,7 @@ namespace Parcial1_NeysiFM.BLL
             Contexto contexto = new Contexto();
             try
             {
-                var eliminar = contexto.Usuario.Find(Id);
+                var eliminar = contexto.Producto.Find(Id);
                 contexto.Entry(eliminar).State = EntityState.Deleted;
 
                 paso = contexto.SaveChanges() > 0;
@@ -52,13 +54,13 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
-        public static bool Modificar(Usuarios usuario)
+        public static bool Modificar(Productos producto)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
             try
             {
-                contexto.Entry(usuario).State = EntityState.Modified;
+                contexto.Entry(producto).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
@@ -72,13 +74,13 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
-        public static Usuarios Buscar(int id)
+        public static Productos Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Usuarios usuario = new Usuarios();
+            Productos usuario = new Productos();
             try
             {
-                usuario = contexto.Usuario.Find(id);
+                usuario = contexto.Producto.Find(id);
             }
             catch (Exception)
             {
@@ -91,13 +93,13 @@ namespace Parcial1_NeysiFM.BLL
             return usuario;
         }
 
-        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> usuario)
+        public static List<Productos> GetList(Expression<Func<Productos, bool>> producto)
         {
-            List<Usuarios> Lista = new List<Usuarios>();
+            List<Productos> Lista = new List<Productos>();
             Contexto contexto = new Contexto();
             try
             {
-                Lista = contexto.Usuario.Where(usuario).ToList();
+                Lista = contexto.Producto.Where(producto).ToList();
             }
             catch (Exception)
             {

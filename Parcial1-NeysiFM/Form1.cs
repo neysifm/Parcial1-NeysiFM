@@ -17,19 +17,19 @@ namespace Parcial1_NeysiFM
             InitializeComponent();
         }
 
-        private void metroTextBox3_Click(object sender, EventArgs e)
+        private void MetroTextBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            new DALL.Contexto().Producto.Find(1); 
+            //new DAL.Contexto().Producto.Find(1); 
         }
     }
 }

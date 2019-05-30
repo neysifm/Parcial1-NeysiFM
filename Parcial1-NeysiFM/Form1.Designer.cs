@@ -158,7 +158,7 @@
             this.TextBoxExistencia.UseSelectable = true;
             this.TextBoxExistencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxExistencia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TextBoxExistencia.TextChanged += new System.EventHandler(this.metroTextBox3_Click);
+            this.TextBoxExistencia.TextChanged += new System.EventHandler(this.MetroTextBox3_Click);
             // 
             // TextBoxCosto
             // 
@@ -189,8 +189,8 @@
             this.TextBoxCosto.UseSelectable = true;
             this.TextBoxCosto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxCosto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TextBoxCosto.TextChanged += new System.EventHandler(this.metroTextBox3_Click);
-            this.TextBoxCosto.Click += new System.EventHandler(this.metroTextBox3_Click);
+            this.TextBoxCosto.TextChanged += new System.EventHandler(this.MetroTextBox3_Click);
+            this.TextBoxCosto.Click += new System.EventHandler(this.MetroTextBox3_Click);
             // 
             // TextBoxValorInventario
             // 
@@ -228,7 +228,7 @@
             this.IDnumericUpDown1.Name = "IDnumericUpDown1";
             this.IDnumericUpDown1.Size = new System.Drawing.Size(58, 20);
             this.IDnumericUpDown1.TabIndex = 9;
-            this.IDnumericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.IDnumericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // ButtonBuscar
             // 
