@@ -29,7 +29,7 @@ namespace Parcial1_NeysiFM
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //new DAL.Contexto().Producto.Find(1); 
+ 
         }
     }
 }
