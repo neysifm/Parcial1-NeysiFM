@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial1_NeysiFM.BLL
 {
-    class ProductosBLL
+    public class ProductosBLL
     {
     }
 }

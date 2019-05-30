@@ -10,7 +10,6 @@ namespace Parcial1_NeysiFM.Entidades
     public class Productos
     {
         [Key]
-
         public int ProductosId { get; set; }
         public String Descripcion { get; set; }
         public int Existencia { get; set; }
