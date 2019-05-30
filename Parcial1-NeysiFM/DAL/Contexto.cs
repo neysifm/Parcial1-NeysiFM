@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using Parcial1_NeysiFM.Entidades;
 
-namespace Parcial1_NeysiFM.DALL
+
+namespace Parcial1_NeysiFM.DAL
 {
     public class Contexto : DbContext
     {
