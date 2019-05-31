@@ -8,5 +8,6 @@ namespace Parcial1_NeysiFM.UI.Reportes
 {
     class Class1
     {
+        //Solo para tener la estructura completa de la forma correcta para la materia de Programacion Aplicada 1
     }
 }
