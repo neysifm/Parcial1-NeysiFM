@@ -119,7 +119,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "ValorInventario";
             this.Padding = new System.Windows.Forms.Padding(33, 83, 33, 28);
-            this.Text = "VER VALOR DE INVENTARIO";
+            this.Text = "Ver Valor de Inventario";
             this.Load += new System.EventHandler(this.ValorInventario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
