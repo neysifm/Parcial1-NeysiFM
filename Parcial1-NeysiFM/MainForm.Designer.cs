@@ -1,6 +1,6 @@
 ﻿namespace Parcial1_NeysiFM
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -38,7 +39,7 @@
             this.TextBoxExistencia = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxCosto = new MetroFramework.Controls.MetroTextBox();
             this.TextBoxValorInventario = new MetroFramework.Controls.MetroTextBox();
-            this.IDnumericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ButtonBuscar = new MetroFramework.Controls.MetroButton();
             this.ButtonNuevo = new MetroFramework.Controls.MetroButton();
             this.ButtonGuardar = new MetroFramework.Controls.MetroButton();
@@ -50,11 +51,19 @@
             this.MetroTileValorInventarioInicio = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).BeginInit();
+            this.DescripcionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ExistenciaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CostoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ValorInventarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -225,13 +234,13 @@
             this.TextBoxValorInventario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxValorInventario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // IDnumericUpDown1
+            // IDnumericUpDown
             // 
-            this.IDnumericUpDown1.Location = new System.Drawing.Point(210, 127);
-            this.IDnumericUpDown1.Name = "IDnumericUpDown1";
-            this.IDnumericUpDown1.Size = new System.Drawing.Size(58, 20);
-            this.IDnumericUpDown1.TabIndex = 9;
-            this.IDnumericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
+            this.IDnumericUpDown.Location = new System.Drawing.Point(210, 127);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(58, 20);
+            this.IDnumericUpDown.TabIndex = 9;
+            this.IDnumericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // ButtonBuscar
             // 
@@ -256,6 +265,7 @@
             this.ButtonNuevo.TabIndex = 11;
             this.ButtonNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonNuevo.UseSelectable = true;
+            this.ButtonNuevo.Click += new System.EventHandler(this.ButtonNuevo_Click);
             // 
             // ButtonGuardar
             // 
@@ -282,7 +292,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(531, 116);
+            this.pictureBox1.Location = new System.Drawing.Point(545, 126);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -351,12 +361,28 @@
             this.metroTile2.TabIndex = 23;
             this.metroTile2.UseSelectable = true;
             // 
-            // Form1
+            // DescripcionerrorProvider
+            // 
+            this.DescripcionerrorProvider.ContainerControl = this;
+            // 
+            // ExistenciaerrorProvider
+            // 
+            this.ExistenciaerrorProvider.ContainerControl = this;
+            // 
+            // CostoerrorProvider
+            // 
+            this.CostoerrorProvider.ContainerControl = this;
+            // 
+            // ValorInventarioerrorProvider
+            // 
+            this.ValorInventarioerrorProvider.ContainerControl = this;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(803, 504);
+            this.ClientSize = new System.Drawing.Size(815, 505);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.MetroTileValorInventarioInicio);
@@ -368,7 +394,7 @@
             this.Controls.Add(this.ButtonGuardar);
             this.Controls.Add(this.ButtonNuevo);
             this.Controls.Add(this.ButtonBuscar);
-            this.Controls.Add(this.IDnumericUpDown1);
+            this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.TextBoxValorInventario);
             this.Controls.Add(this.TextBoxCosto);
             this.Controls.Add(this.TextBoxExistencia);
@@ -378,15 +404,19 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Registro de Productos";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +433,7 @@
         private MetroFramework.Controls.MetroTextBox TextBoxExistencia;
         private MetroFramework.Controls.MetroTextBox TextBoxCosto;
         private MetroFramework.Controls.MetroTextBox TextBoxValorInventario;
-        private System.Windows.Forms.NumericUpDown IDnumericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private MetroFramework.Controls.MetroButton ButtonBuscar;
         private MetroFramework.Controls.MetroButton ButtonNuevo;
         private MetroFramework.Controls.MetroButton ButtonGuardar;
@@ -415,6 +445,10 @@
         private MetroFramework.Controls.MetroTile MetroTileValorInventarioInicio;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
+        private System.Windows.Forms.ErrorProvider DescripcionerrorProvider;
+        private System.Windows.Forms.ErrorProvider ExistenciaerrorProvider;
+        private System.Windows.Forms.ErrorProvider CostoerrorProvider;
+        private System.Windows.Forms.ErrorProvider ValorInventarioerrorProvider;
     }
 }
 

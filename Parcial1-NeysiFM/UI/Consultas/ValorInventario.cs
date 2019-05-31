@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Parcial1_NeysiFM;
 
 namespace Parcial1_NeysiFM.UI.Consultas
 {
@@ -25,6 +26,11 @@ namespace Parcial1_NeysiFM.UI.Consultas
         private void MetroLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MetroTileInicio_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

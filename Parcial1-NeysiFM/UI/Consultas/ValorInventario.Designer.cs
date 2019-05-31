@@ -104,6 +104,7 @@
             this.MetroTileInicio.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MetroTileInicio.UseSelectable = true;
             this.MetroTileInicio.UseTileImage = true;
+            this.MetroTileInicio.Click += new System.EventHandler(this.MetroTileInicio_Click);
             // 
             // ValorInventario
             // 
