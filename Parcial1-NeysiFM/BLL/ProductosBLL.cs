@@ -77,10 +77,10 @@ namespace Parcial1_NeysiFM.BLL
         public static Productos Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Productos usuario = new Productos();
+            Productos producto = new Productos();
             try
             {
-                usuario = contexto.Producto.Find(id);
+                producto = contexto.Producto.Find(id);
             }
             catch (Exception)
             {
@@ -90,7 +90,7 @@ namespace Parcial1_NeysiFM.BLL
             {
                 contexto.Dispose();
             }
-            return usuario;
+            return producto;
         }
 
         public static List<Productos> GetList(Expression<Func<Productos, bool>> producto)
