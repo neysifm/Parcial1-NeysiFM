@@ -31,5 +31,10 @@ namespace Parcial1_NeysiFM
         {
  
         }
+
+        private void MetroTileValorInventarioInicio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

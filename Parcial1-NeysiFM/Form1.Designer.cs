@@ -47,6 +47,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.MetroTileValorInventarioInicio = new MetroFramework.Controls.MetroTile();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -59,45 +62,45 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(90, 128);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(79, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(82, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Producto ID";
+            this.metroLabel1.Text = "Producto ID:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(90, 178);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(79, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Descripcion";
+            this.metroLabel2.Text = "Descripcion:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(90, 220);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(67, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Existencia";
+            this.metroLabel3.Text = "Existencia:";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(90, 266);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(46, 19);
             this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Costo";
+            this.metroLabel4.Text = "Costo:";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(90, 315);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(99, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(102, 19);
             this.metroLabel5.TabIndex = 4;
-            this.metroLabel5.Text = "Valor Inventario";
+            this.metroLabel5.Text = "Valor Inventario:";
             // 
             // TextBoxDescripcion
             // 
@@ -105,7 +108,7 @@
             // 
             // 
             this.TextBoxDescripcion.CustomButton.Image = null;
-            this.TextBoxDescripcion.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.TextBoxDescripcion.CustomButton.Location = new System.Drawing.Point(293, 1);
             this.TextBoxDescripcion.CustomButton.Name = "";
             this.TextBoxDescripcion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBoxDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -123,7 +126,7 @@
             this.TextBoxDescripcion.SelectionLength = 0;
             this.TextBoxDescripcion.SelectionStart = 0;
             this.TextBoxDescripcion.ShortcutsEnabled = true;
-            this.TextBoxDescripcion.Size = new System.Drawing.Size(217, 23);
+            this.TextBoxDescripcion.Size = new System.Drawing.Size(315, 23);
             this.TextBoxDescripcion.TabIndex = 5;
             this.TextBoxDescripcion.UseSelectable = true;
             this.TextBoxDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -279,9 +282,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(433, 126);
+            this.pictureBox1.Location = new System.Drawing.Point(531, 116);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(246, 264);
+            this.pictureBox1.Size = new System.Drawing.Size(262, 233);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -316,11 +319,47 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
+            // MetroTileValorInventarioInicio
+            // 
+            this.MetroTileValorInventarioInicio.ActiveControl = null;
+            this.MetroTileValorInventarioInicio.Location = new System.Drawing.Point(368, 203);
+            this.MetroTileValorInventarioInicio.Name = "MetroTileValorInventarioInicio";
+            this.MetroTileValorInventarioInicio.Size = new System.Drawing.Size(157, 131);
+            this.MetroTileValorInventarioInicio.TabIndex = 20;
+            this.MetroTileValorInventarioInicio.Text = "Valor Total Inventario";
+            this.MetroTileValorInventarioInicio.TileImage = ((System.Drawing.Image)(resources.GetObject("MetroTileValorInventarioInicio.TileImage")));
+            this.MetroTileValorInventarioInicio.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MetroTileValorInventarioInicio.UseSelectable = true;
+            this.MetroTileValorInventarioInicio.UseTileImage = true;
+            this.MetroTileValorInventarioInicio.Click += new System.EventHandler(this.MetroTileValorInventarioInicio_Click);
+            // 
+            // metroTile3
+            // 
+            this.metroTile3.ActiveControl = null;
+            this.metroTile3.Location = new System.Drawing.Point(433, 126);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(92, 42);
+            this.metroTile3.TabIndex = 22;
+            this.metroTile3.UseSelectable = true;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(210, 153);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(58, 15);
+            this.metroTile2.TabIndex = 23;
+            this.metroTile2.UseSelectable = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 516);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(803, 504);
+            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.MetroTileValorInventarioInicio);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
@@ -373,6 +412,9 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private MetroFramework.Controls.MetroTile MetroTileValorInventarioInicio;
+        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile metroTile2;
     }
 }
 
