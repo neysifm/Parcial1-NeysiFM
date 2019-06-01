@@ -49,7 +49,7 @@ namespace Parcial1_NeysiFM
 
         private void ButtonNuevo_Click(object sender, EventArgs e)
         {
-            //IDnumericUpDown.Value = 0;
+            IDnumericUpDown.Value = 0;
             TextBoxDescripcion.Clear();
             TextBoxExistencia.Clear();
             TextBoxCosto.Clear();
