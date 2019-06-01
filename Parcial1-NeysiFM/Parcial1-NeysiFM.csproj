@@ -79,7 +79,6 @@
     <Compile Include="UI\Consultas\ValorInventario.Designer.cs">
       <DependentUpon>ValorInventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\Class1.cs" />
     <Compile Include="UI\Reportes\Class1.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -108,8 +107,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\Registros\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
