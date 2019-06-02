@@ -1,4 +1,5 @@
-﻿using Parcial1_NeysiFM.UI.Registros;
+﻿using Parcial1_NeysiFM.UI.Consultas;
+using Parcial1_NeysiFM.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,11 @@ namespace Parcial1_NeysiFM
         {
             RegistrosProductos rp = new RegistrosProductos();
             rp.ShowDialog();
+        }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ValorInventario().ShowDialog();
         }
     }
 }
