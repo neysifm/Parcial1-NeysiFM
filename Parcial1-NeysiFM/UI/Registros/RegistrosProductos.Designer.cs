@@ -51,19 +51,13 @@
             this.MetroTileValorInventarioInicio = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.DescripcionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ExistenciaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CostoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ValorInventarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostoerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -155,7 +149,8 @@
             this.TextBoxExistencia.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBoxExistencia.CustomButton.UseSelectable = true;
             this.TextBoxExistencia.CustomButton.Visible = false;
-            this.TextBoxExistencia.Lines = new string[0];
+            this.TextBoxExistencia.Lines = new string[] {
+        "0"};
             this.TextBoxExistencia.Location = new System.Drawing.Point(210, 220);
             this.TextBoxExistencia.MaxLength = 32767;
             this.TextBoxExistencia.Name = "TextBoxExistencia";
@@ -167,6 +162,7 @@
             this.TextBoxExistencia.ShortcutsEnabled = true;
             this.TextBoxExistencia.Size = new System.Drawing.Size(87, 23);
             this.TextBoxExistencia.TabIndex = 6;
+            this.TextBoxExistencia.Text = "0";
             this.TextBoxExistencia.UseSelectable = true;
             this.TextBoxExistencia.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxExistencia.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -186,7 +182,8 @@
             this.TextBoxCosto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBoxCosto.CustomButton.UseSelectable = true;
             this.TextBoxCosto.CustomButton.Visible = false;
-            this.TextBoxCosto.Lines = new string[0];
+            this.TextBoxCosto.Lines = new string[] {
+        "0"};
             this.TextBoxCosto.Location = new System.Drawing.Point(210, 262);
             this.TextBoxCosto.MaxLength = 32767;
             this.TextBoxCosto.Name = "TextBoxCosto";
@@ -198,6 +195,7 @@
             this.TextBoxCosto.ShortcutsEnabled = true;
             this.TextBoxCosto.Size = new System.Drawing.Size(87, 23);
             this.TextBoxCosto.TabIndex = 7;
+            this.TextBoxCosto.Text = "0";
             this.TextBoxCosto.UseSelectable = true;
             this.TextBoxCosto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxCosto.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -218,7 +216,9 @@
             this.TextBoxValorInventario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBoxValorInventario.CustomButton.UseSelectable = true;
             this.TextBoxValorInventario.CustomButton.Visible = false;
-            this.TextBoxValorInventario.Lines = new string[0];
+            this.TextBoxValorInventario.Enabled = false;
+            this.TextBoxValorInventario.Lines = new string[] {
+        "0"};
             this.TextBoxValorInventario.Location = new System.Drawing.Point(210, 311);
             this.TextBoxValorInventario.MaxLength = 32767;
             this.TextBoxValorInventario.Name = "TextBoxValorInventario";
@@ -230,6 +230,7 @@
             this.TextBoxValorInventario.ShortcutsEnabled = true;
             this.TextBoxValorInventario.Size = new System.Drawing.Size(87, 23);
             this.TextBoxValorInventario.TabIndex = 8;
+            this.TextBoxValorInventario.Text = "0";
             this.TextBoxValorInventario.UseSelectable = true;
             this.TextBoxValorInventario.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBoxValorInventario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -361,23 +362,11 @@
             this.metroTile2.TabIndex = 23;
             this.metroTile2.UseSelectable = true;
             // 
-            // DescripcionerrorProvider
+            // errorProvider
             // 
-            this.DescripcionerrorProvider.ContainerControl = this;
+            this.errorProvider.ContainerControl = this;
             // 
-            // ExistenciaerrorProvider
-            // 
-            this.ExistenciaerrorProvider.ContainerControl = this;
-            // 
-            // CostoerrorProvider
-            // 
-            this.CostoerrorProvider.ContainerControl = this;
-            // 
-            // ValorInventarioerrorProvider
-            // 
-            this.ValorInventarioerrorProvider.ContainerControl = this;
-            // 
-            // MainForm
+            // RegistrosProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,7 +393,7 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "MainForm";
+            this.Name = "RegistrosProductos";
             this.Text = "Registro de Productos";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -413,10 +402,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DescripcionerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExistenciaerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CostoerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ValorInventarioerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,10 +431,7 @@
         private MetroFramework.Controls.MetroTile MetroTileValorInventarioInicio;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private System.Windows.Forms.ErrorProvider DescripcionerrorProvider;
-        private System.Windows.Forms.ErrorProvider ExistenciaerrorProvider;
-        private System.Windows.Forms.ErrorProvider CostoerrorProvider;
-        private System.Windows.Forms.ErrorProvider ValorInventarioerrorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

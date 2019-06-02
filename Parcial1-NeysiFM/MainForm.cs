@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial1_NeysiFM.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,23 @@ namespace Parcial1_NeysiFM
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void MetroContextMenu1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void RegistroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrosProductos rp = new RegistrosProductos();
+            rp.ShowDialog();
         }
     }
 }

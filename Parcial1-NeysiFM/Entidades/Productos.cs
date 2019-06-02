@@ -13,7 +13,7 @@ namespace Parcial1_NeysiFM.Entidades
         public int ProductosId { get; set; }
         public String Descripcion { get; set; }
         public int Existencia { get; set; }
-        public float Costo { get; set; }
+        public double Costo { get; set; }
         public double ValorInventario { get; set; }
 
         public Productos()
