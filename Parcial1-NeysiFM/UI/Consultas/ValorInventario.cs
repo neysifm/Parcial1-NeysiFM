@@ -8,11 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Parcial1_NeysiFM;
+using Parcial1_NeysiFM.BLL;
+using Parcial1_NeysiFM.DAL;
+using Parcial1_NeysiFM.Entidades;
 
 namespace Parcial1_NeysiFM.UI.Consultas
 {
     public partial class ValorInventario : MetroFramework.Forms.MetroForm
     {
+        public object ProductoBLL { get; private set; }
+
         public ValorInventario()
         {
             InitializeComponent();
@@ -20,7 +25,7 @@ namespace Parcial1_NeysiFM.UI.Consultas
 
         private void ValorInventario_Load(object sender, EventArgs e)
         {
-
+            this.MetroTextBoxValorInventario.Text = ObtenerTotalInventario().ToString();
         }
 
         private void MetroLabel1_Click(object sender, EventArgs e)
@@ -33,6 +38,21 @@ namespace Parcial1_NeysiFM.UI.Consultas
             this.Close();
         }
 
-       
+        public Double ObtenerTotalInventario()
+        {
+            List<Productos> listaProductos = ProductosBLL.GetList(x => true);
+            Double total = 0;
+            foreach(Productos elemento in listaProductos)
+            {
+                total += elemento.ValorInventario;
+            }
+
+            return total;
+        }
+
+        private void MetroTileRefrescar_Click(object sender, EventArgs e)
+        {
+            MetroTextBoxValorInventario.Text = ObtenerTotalInventario().ToString();
+        }
     }
 }

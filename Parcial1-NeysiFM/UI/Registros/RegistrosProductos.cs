@@ -59,7 +59,7 @@ namespace Parcial1_NeysiFM.UI.Registros
         private void MetroTileValorInventarioInicio_Click(object sender, EventArgs e)
         {
             ValorInventario vi = new ValorInventario();
-            vi.ShowDialog();
+            vi.Show();
         }
 
         private void ButtonNuevo_Click(object sender, EventArgs e)

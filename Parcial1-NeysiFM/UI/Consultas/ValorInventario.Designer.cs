@@ -62,6 +62,7 @@
             this.MetroTextBoxValorInventario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.MetroTextBoxValorInventario.CustomButton.UseSelectable = true;
             this.MetroTextBoxValorInventario.CustomButton.Visible = false;
+            this.MetroTextBoxValorInventario.Enabled = false;
             this.MetroTextBoxValorInventario.Lines = new string[0];
             this.MetroTextBoxValorInventario.Location = new System.Drawing.Point(198, 118);
             this.MetroTextBoxValorInventario.MaxLength = 32767;
@@ -91,6 +92,7 @@
             this.MetroTileRefrescar.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MetroTileRefrescar.UseSelectable = true;
             this.MetroTileRefrescar.UseTileImage = true;
+            this.MetroTileRefrescar.Click += new System.EventHandler(this.MetroTileRefrescar_Click);
             // 
             // MetroTileInicio
             // 
