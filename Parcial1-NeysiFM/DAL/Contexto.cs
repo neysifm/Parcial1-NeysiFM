@@ -12,6 +12,7 @@ namespace Parcial1_NeysiFM.DAL
     public class Contexto : DbContext
     {
         public DbSet <Productos> Producto { get; set; }
+        public DbSet <Inventario> Inventario { get; set; }
 
         public Contexto() : base("ConStr") { }
     }

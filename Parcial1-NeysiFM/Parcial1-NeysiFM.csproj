@@ -80,6 +80,7 @@
     <Compile Include="BLL\IFormularioRegistro.cs" />
     <Compile Include="BLL\ProductosBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="Entidades\Inventario.cs" />
     <Compile Include="Entidades\Productos.cs" />
     <Compile Include="UI\Registros\RegistrosProductos.cs">
       <SubType>Form</SubType>
