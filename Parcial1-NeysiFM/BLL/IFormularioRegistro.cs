@@ -12,6 +12,7 @@ namespace Parcial1_NeysiFM.BLL
         bool ValidarBuscar();
         bool ValidarEliminar();
         bool ValidarGuardar();
+        bool ValidarModificar();
         void LimpiarCampos();
         T LlenaClase();
         void LlenaCampos(T obj);

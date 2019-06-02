@@ -32,5 +32,7 @@ namespace Parcial1_NeysiFM.UI.Consultas
         {
             this.Close();
         }
+
+       
     }
 }

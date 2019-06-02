@@ -255,6 +255,7 @@
             this.ButtonBuscar.TabIndex = 10;
             this.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonBuscar.UseSelectable = true;
+            this.ButtonBuscar.Click += new System.EventHandler(this.ButtonBuscar_Click);
             // 
             // ButtonNuevo
             // 
@@ -278,6 +279,7 @@
             this.ButtonGuardar.TabIndex = 12;
             this.ButtonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonGuardar.UseSelectable = true;
+            this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
             // 
             // ButtonEliminar
             // 
@@ -289,6 +291,7 @@
             this.ButtonEliminar.TabIndex = 13;
             this.ButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonEliminar.UseSelectable = true;
+            this.ButtonEliminar.Click += new System.EventHandler(this.ButtonEliminar_Click);
             // 
             // pictureBox1
             // 

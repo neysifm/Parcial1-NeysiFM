@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Controls;
 using Parcial1_NeysiFM.BLL;
+using Parcial1_NeysiFM.DAL;
 using Parcial1_NeysiFM.Entidades;
 using Parcial1_NeysiFM.UI.Consultas;
 
@@ -22,20 +23,14 @@ namespace Parcial1_NeysiFM.UI.Registros
         }
 
         public double CalcularInventario()
-           
-
         {
             Double valorInventario = 0;
             try
             {
-
-
-                valorInventario =  (Convert.ToInt32(TextBoxExistencia.Text) * Convert.ToInt32(TextBoxCosto.Text));
-            }catch(Exception e)
-            {
-                
+             valorInventario =  (Convert.ToInt32(TextBoxExistencia.Text) * Convert.ToInt32(TextBoxCosto.Text));
+            }catch(Exception)
+            {          
             }
-
             return valorInventario;
         }
 
@@ -81,12 +76,12 @@ namespace Parcial1_NeysiFM.UI.Registros
                 errorProvider.SetError(TextBoxDescripcion, "La Descripcion no debe de estar vacia, Llenar descripcion del Producto");
                 validar = false;
             }           
-            if (string.IsNullOrEmpty(TextBoxExistencia.Text) || TextBoxExistencia.Text != "0")
+            if (string.IsNullOrEmpty(TextBoxExistencia.Text) || TextBoxExistencia.Text == "0")
             {
                 errorProvider.SetError(TextBoxExistencia, "La Existencia debe ser mayor a '0', Llenar Existencia del Producto");
                 validar = false;
             }
-            if (string.IsNullOrEmpty(TextBoxCosto.Text) || TextBoxCosto.Text != "0")
+            if (string.IsNullOrEmpty(TextBoxCosto.Text) || TextBoxCosto.Text == "0")
             {
                 errorProvider.SetError(TextBoxCosto, "El Costo debe ser mayor a '0', Llenar Costo del Producto");
                 validar = false;
@@ -100,6 +95,10 @@ namespace Parcial1_NeysiFM.UI.Registros
             {
                 return false;
             }
+            if(ProductosBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value)) == null)
+            {
+                return false;
+            }
             return true;
         }
 
@@ -110,11 +109,10 @@ namespace Parcial1_NeysiFM.UI.Registros
 
         public bool ValidarGuardar()
         {
-            if(!ValidarBuscar() && !ValidarCampos())
+            if(!ValidarCampos())
             {
                 return false;
             }
-
             return true;
         }
 
@@ -129,8 +127,7 @@ namespace Parcial1_NeysiFM.UI.Registros
         }
 
         public Productos LlenaClase()
-        {
-            
+        {        
             Productos producto = new Productos
             {
 
@@ -152,6 +149,70 @@ namespace Parcial1_NeysiFM.UI.Registros
             IDnumericUpDown.Value = producto.ProductosId;
         }
 
-    
+        public bool ValidarModificar()
+        {
+            if(!ValidarBuscar() ||  !ValidarGuardar())
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private void ButtonBuscar_Click(object sender, EventArgs e)
+        {
+            if(ValidarBuscar() == false)
+            {
+                MessageBox.Show("No existe un producto con este ID");
+                return;
+            }
+            LlenaCampos(ProductosBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value)));
+        }
+
+        private void ButtonGuardar_Click(object sender, EventArgs e)
+        {
+           
+            if(IDnumericUpDown.Value > 0)
+            {
+                if(ValidarModificar())
+                {
+                    if(ProductosBLL.Modificar(LlenaClase()))
+                    {
+                        MessageBox.Show("El registro se actualizo correctamente");
+                        LimpiarCampos();
+                        return;
+                    }
+                } 
+
+            } else
+            {
+                if (ValidarGuardar())
+                {
+                    if (ProductosBLL.Guardar(LlenaClase()) == true)
+                    {
+                        MessageBox.Show("El registro se guardo correctamente");
+                        LimpiarCampos();
+                        return;
+                    }
+
+                }
+            }
+
+            MessageBox.Show("Error al intentar guardar o modificar el registro!");
+        }
+
+        private void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+            if(ValidarEliminar())
+            {
+                if(ProductosBLL.Eliminar(Convert.ToInt32(IDnumericUpDown.Value)))
+                {
+                    MessageBox.Show("Registro Eliminado Correctamente!");
+                    LimpiarCampos();
+                    return;
+                }
+
+                MessageBox.Show("Error al intentar eliminar el registro!");
+            }
+        }
     }
 }
