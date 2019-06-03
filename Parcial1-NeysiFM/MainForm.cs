@@ -50,5 +50,10 @@ namespace Parcial1_NeysiFM
         {
             new ValorInventario().ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
