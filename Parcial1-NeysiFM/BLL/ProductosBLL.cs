@@ -12,6 +12,7 @@ namespace Parcial1_NeysiFM.BLL
 {
     public class ProductosBLL
     {
+        // METODO GUARDAR
         public static bool Guardar(Productos producto)
         {
             bool paso = false;
@@ -23,6 +24,7 @@ namespace Parcial1_NeysiFM.BLL
                     Inventario iv = contexto.Inventario.Find(1);
                     iv.ValorInventario += producto.ValorInventario;
                     contexto.Entry(iv).State = EntityState.Modified;
+
                     paso = contexto.SaveChanges() > 0;
                 }
             }
@@ -37,6 +39,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO ELIMINAR
         public static bool Eliminar(int Id)
         {
             bool paso = false;
@@ -46,7 +49,6 @@ namespace Parcial1_NeysiFM.BLL
                 var eliminar = contexto.Producto.Find(Id);
                 Inventario inventario = InventarioBLL.Buscar(1);
                 inventario.ValorInventario -= eliminar.ValorInventario;
-
                 contexto.Entry(inventario).State = EntityState.Modified;
                 contexto.Entry(eliminar).State = EntityState.Deleted;
 
@@ -63,6 +65,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO MODIFICAR
         public static bool Modificar(Productos producto)
         {
             bool paso = false;
@@ -73,23 +76,22 @@ namespace Parcial1_NeysiFM.BLL
                 Productos productoAnterior = ProductosBLL.Buscar(producto.ProductosId);
                 if (productoAnterior.ValorInventario > producto.ValorInventario)
                 {
-                    valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
+                  valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
                 } else if (productoAnterior.ValorInventario < producto.ValorInventario)
                 {
-                    valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
+                  valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
                 }
                 Inventario inventario = InventarioBLL.Buscar(1);
                 if(valorModificar >= 0)
                 {
-                    inventario.ValorInventario += valorModificar;
+                  inventario.ValorInventario += valorModificar;
                 } else
                 {
                     if((inventario.ValorInventario + valorModificar) >= 0)
                     {
                         inventario.ValorInventario += valorModificar;
                     }
-                }
-                
+                }          
                 contexto.Entry(inventario).State = EntityState.Modified;
                 contexto.Entry(producto).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
@@ -105,6 +107,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO BUSCAR
         public static Productos Buscar(int id)
         {
             Contexto contexto = new Contexto();
@@ -124,6 +127,7 @@ namespace Parcial1_NeysiFM.BLL
             return producto;
         }
 
+        // LISTAR PRODUCTOS
         public static List<Productos> GetList(Expression<Func<Productos, bool>> producto)
         {
             List<Productos> Lista = new List<Productos>();
