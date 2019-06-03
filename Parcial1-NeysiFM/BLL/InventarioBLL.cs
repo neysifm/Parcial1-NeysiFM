@@ -12,6 +12,7 @@ namespace Parcial1_NeysiFM.BLL
 {
     public class InventarioBLL
     {
+        // METODO GUARDAR
         public static bool Guardar(Inventario inventario)
         {
             bool paso = false;
@@ -32,6 +33,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO ELIMINAR
         public static bool Eliminar(int Id)
         {
             bool paso = false;
@@ -54,6 +56,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO MODIFICAR
         public static bool Modificar(Inventario inventario)
         {
             bool paso = false;
@@ -75,6 +78,7 @@ namespace Parcial1_NeysiFM.BLL
             return paso;
         }
 
+        // METODO BUSCAR
         public static Inventario Buscar(int id)
         {
             Contexto contexto = new Contexto();
@@ -94,6 +98,7 @@ namespace Parcial1_NeysiFM.BLL
             return inventario;
         }
 
+        // LISTAR INVENTARIO
         public static List<Inventario> GetList(Expression<Func<Inventario, bool>> inventario)
         {
             List<Inventario> Lista = new List<Inventario>();
