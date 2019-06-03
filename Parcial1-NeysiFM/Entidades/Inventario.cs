@@ -13,13 +13,16 @@ namespace Parcial1_NeysiFM.Entidades
         public int InventarioId { get; set; }
         public Double ValorInventario { get; set; }
 
+        // CONTRUCTOR
         public Inventario(double valorInventario)
         {
             ValorInventario = valorInventario;
         }
 
+        // CONSTRUCTOR VACIO
         public Inventario()
         {
+            //
         }
     }
 }
