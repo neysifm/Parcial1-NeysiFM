@@ -16,6 +16,7 @@ namespace Parcial1_NeysiFM.Entidades
         public double Costo { get; set; }
         public double ValorInventario { get; set; }
 
+        // CONSTRUCTOR
         public Productos()
         {
             ProductosId = 0;
