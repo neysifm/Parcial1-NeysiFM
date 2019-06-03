@@ -196,7 +196,6 @@ namespace Parcial1_NeysiFM.UI.Registros
 
                 }
             }
-
             MessageBox.Show("Error al intentar guardar o modificar el registro!");
         }
 
@@ -213,6 +212,12 @@ namespace Parcial1_NeysiFM.UI.Registros
 
                 MessageBox.Show("Error al intentar eliminar el registro!");
             }
+        }
+
+        private void MetroButton1_Click(object sender, EventArgs e)
+        {
+            FUbicaciones FU = new FUbicaciones();
+            FU.ShowDialog();
         }
     }
 }
