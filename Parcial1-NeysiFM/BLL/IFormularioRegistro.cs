@@ -16,7 +16,5 @@ namespace Parcial1_NeysiFM.BLL
         void LimpiarCampos();
         T LlenaClase();
         void LlenaCampos(T obj);
-
-
     }
 }
