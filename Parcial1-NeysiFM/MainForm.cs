@@ -1,4 +1,5 @@
-﻿using Parcial1_NeysiFM.UI.Consultas;
+﻿using Parcial1_NeysiFM.BLL;
+using Parcial1_NeysiFM.UI.Consultas;
 using Parcial1_NeysiFM.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,10 @@ namespace Parcial1_NeysiFM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if(InventarioBLL.Buscar(1) == null)
+            {
+                InventarioBLL.Guardar(new Entidades.Inventario(0));
+            }
 
         }
 

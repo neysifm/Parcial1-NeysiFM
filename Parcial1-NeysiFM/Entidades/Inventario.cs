@@ -12,5 +12,14 @@ namespace Parcial1_NeysiFM.Entidades
         [Key]
         public int InventarioId { get; set; }
         public Double ValorInventario { get; set; }
+
+        public Inventario(double valorInventario)
+        {
+            ValorInventario = valorInventario;
+        }
+
+        public Inventario()
+        {
+        }
     }
 }

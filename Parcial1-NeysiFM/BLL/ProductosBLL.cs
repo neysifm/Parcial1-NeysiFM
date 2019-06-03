@@ -19,7 +19,12 @@ namespace Parcial1_NeysiFM.BLL
             try
             {
                 if (contexto.Producto.Add(producto) != null)
+                {
+                    Inventario iv = contexto.Inventario.Find(1);
+                    iv.ValorInventario += producto.ValorInventario;
+                    contexto.Entry(iv).State = EntityState.Modified;
                     paso = contexto.SaveChanges() > 0;
+                }
             }
             catch (Exception)
             {
@@ -39,6 +44,10 @@ namespace Parcial1_NeysiFM.BLL
             try
             {
                 var eliminar = contexto.Producto.Find(Id);
+                Inventario inventario = InventarioBLL.Buscar(1);
+                inventario.ValorInventario -= eliminar.ValorInventario;
+
+                contexto.Entry(inventario).State = EntityState.Modified;
                 contexto.Entry(eliminar).State = EntityState.Deleted;
 
                 paso = contexto.SaveChanges() > 0;
@@ -60,6 +69,28 @@ namespace Parcial1_NeysiFM.BLL
             Contexto contexto = new Contexto();
             try
             {
+                Double valorModificar = 0;
+                Productos productoAnterior = ProductosBLL.Buscar(producto.ProductosId);
+                if (productoAnterior.ValorInventario > producto.ValorInventario)
+                {
+                    valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
+                } else if (productoAnterior.ValorInventario < producto.ValorInventario)
+                {
+                    valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
+                }
+                Inventario inventario = InventarioBLL.Buscar(1);
+                if(valorModificar >= 0)
+                {
+                    inventario.ValorInventario += valorModificar;
+                } else
+                {
+                    if((inventario.ValorInventario + valorModificar) >= 0)
+                    {
+                        inventario.ValorInventario += valorModificar;
+                    }
+                }
+                
+                contexto.Entry(inventario).State = EntityState.Modified;
                 contexto.Entry(producto).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }

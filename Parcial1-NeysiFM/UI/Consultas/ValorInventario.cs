@@ -40,12 +40,8 @@ namespace Parcial1_NeysiFM.UI.Consultas
 
         public Double ObtenerTotalInventario()
         {
-            List<Productos> listaProductos = ProductosBLL.GetList(x => true);
-            Double total = 0;
-            foreach(Productos elemento in listaProductos)
-            {
-                total += elemento.ValorInventario;
-            }
+            double total = 0;
+            total = InventarioBLL.Buscar(1).ValorInventario;
 
             return total;
         }
