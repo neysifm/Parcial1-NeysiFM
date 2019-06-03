@@ -40,7 +40,7 @@
             this.MetroLabel1.AutoSize = true;
             this.MetroLabel1.BackColor = System.Drawing.Color.White;
             this.MetroLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MetroLabel1.Location = new System.Drawing.Point(48, 118);
+            this.MetroLabel1.Location = new System.Drawing.Point(38, 98);
             this.MetroLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.MetroLabel1.Name = "MetroLabel1";
             this.MetroLabel1.Size = new System.Drawing.Size(152, 19);
@@ -64,7 +64,7 @@
             this.MetroTextBoxValorInventario.CustomButton.Visible = false;
             this.MetroTextBoxValorInventario.Enabled = false;
             this.MetroTextBoxValorInventario.Lines = new string[0];
-            this.MetroTextBoxValorInventario.Location = new System.Drawing.Point(198, 118);
+            this.MetroTextBoxValorInventario.Location = new System.Drawing.Point(189, 98);
             this.MetroTextBoxValorInventario.MaxLength = 32767;
             this.MetroTextBoxValorInventario.Name = "MetroTextBoxValorInventario";
             this.MetroTextBoxValorInventario.PasswordChar = '\0';
@@ -83,7 +83,7 @@
             // 
             this.MetroTileRefrescar.ActiveControl = null;
             this.MetroTileRefrescar.AutoSize = true;
-            this.MetroTileRefrescar.Location = new System.Drawing.Point(48, 161);
+            this.MetroTileRefrescar.Location = new System.Drawing.Point(38, 131);
             this.MetroTileRefrescar.Name = "MetroTileRefrescar";
             this.MetroTileRefrescar.Size = new System.Drawing.Size(142, 89);
             this.MetroTileRefrescar.TabIndex = 2;
@@ -97,7 +97,7 @@
             // MetroTileInicio
             // 
             this.MetroTileInicio.ActiveControl = null;
-            this.MetroTileInicio.Location = new System.Drawing.Point(198, 161);
+            this.MetroTileInicio.Location = new System.Drawing.Point(189, 131);
             this.MetroTileInicio.Name = "MetroTileInicio";
             this.MetroTileInicio.Size = new System.Drawing.Size(101, 89);
             this.MetroTileInicio.TabIndex = 0;
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 299);
+            this.ClientSize = new System.Drawing.Size(357, 271);
             this.Controls.Add(this.MetroTileInicio);
             this.Controls.Add(this.MetroTileRefrescar);
             this.Controls.Add(this.MetroTextBoxValorInventario);
