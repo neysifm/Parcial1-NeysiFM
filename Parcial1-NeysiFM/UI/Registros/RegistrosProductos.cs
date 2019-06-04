@@ -54,8 +54,21 @@ namespace Parcial1_NeysiFM.UI.Registros
         private void Form1_Load(object sender, EventArgs e)
         {
             LimpiarCampos();
+            LlenaCombo();
         }
 
+        public void LlenaCombo()
+        {
+            this.metroComboBox1.ValueMember = "Descripcion";
+            this.metroComboBox1.SelectedValue = "UbicacionId";
+            List<Ubicaciones> listaUbicaciones = obtenerUbicaciones();
+            this.metroComboBox1.DataSource = listaUbicaciones;
+            this.metroComboBox1.Update();
+            if(listaUbicaciones.Count() > 0)
+            {
+                metroComboBox1.SelectedIndex = 0;
+            }
+        }
         private void MetroTileValorInventarioInicio_Click(object sender, EventArgs e)
         {
             ValorInventario vi = new ValorInventario();
@@ -127,15 +140,16 @@ namespace Parcial1_NeysiFM.UI.Registros
         }
 
         public Productos LlenaClase()
-        {        
+        {
+            MessageBox.Show(metroComboBox1.SelectedValue.ToString());
             Productos producto = new Productos
             {
-
                 Descripcion = TextBoxDescripcion.Text,
                 Existencia = Convert.ToInt32(TextBoxExistencia.Text),
                 Costo = Convert.ToDouble(TextBoxCosto.Text),
                 ValorInventario = Convert.ToDouble(TextBoxValorInventario.Text),
-                ProductosId = Convert.ToInt32(IDnumericUpDown.Value)
+                ProductosId = Convert.ToInt32(IDnumericUpDown.Value),
+                UbicacionId = Convert.ToInt32(metroComboBox1.SelectedValue.ToString())
             };
             return producto;
         }
@@ -147,6 +161,7 @@ namespace Parcial1_NeysiFM.UI.Registros
             TextBoxCosto.Text = producto.Costo.ToString();
             TextBoxValorInventario.Text = producto.ValorInventario.ToString();
             IDnumericUpDown.Value = producto.ProductosId;
+            metroComboBox1.SelectedValue = producto.UbicacionId;
         }
 
         public bool ValidarModificar()
@@ -199,6 +214,11 @@ namespace Parcial1_NeysiFM.UI.Registros
             MessageBox.Show("Error al intentar guardar o modificar el registro!");
         }
 
+        public List<Ubicaciones> obtenerUbicaciones()
+        {
+            return UbicacionesBLL.GetList(x => true);
+        }
+
         private void ButtonEliminar_Click(object sender, EventArgs e)
         {
             if(ValidarEliminar())
@@ -218,6 +238,7 @@ namespace Parcial1_NeysiFM.UI.Registros
         {
             FUbicaciones FU = new FUbicaciones();
             FU.ShowDialog();
+            this.LlenaCombo();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Parcial1_NeysiFM
         {
             if(InventarioBLL.Buscar(1) == null)
             {
-                InventarioBLL.Guardar(new Entidades.Inventario(0));
+                InventarioBLL.Guardar(new Entidades.Inventarios(0));
             }
 
         }

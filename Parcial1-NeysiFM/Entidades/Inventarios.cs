@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace Parcial1_NeysiFM.Entidades
 {
-    public class Inventario
+    public class Inventarios
     {
         [Key]
         public int InventarioId { get; set; }
         public Double ValorInventario { get; set; }
 
         // CONTRUCTOR
-        public Inventario(double valorInventario)
+        public Inventarios(double valorInventario)
         {
             ValorInventario = valorInventario;
         }
 
         // CONSTRUCTOR VACIO
-        public Inventario()
+        public Inventarios()
         {
             //
         }

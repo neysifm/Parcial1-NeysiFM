@@ -20,21 +20,6 @@ namespace Parcial1_NeysiFM.UI.Registros
             InitializeComponent();
         }
 
-        private void Ubicaciones_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MetroLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MetroButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public bool ValidarCampos()
         {
             bool validar = true;
@@ -95,7 +80,7 @@ namespace Parcial1_NeysiFM.UI.Registros
             Ubicaciones ubicaciones = new Ubicaciones
             {
                 Descripcion = DescripcionmetroTextBox.Text,
-                UbicacionesId = Convert.ToInt32(IdnumericUpDown.Value)
+                UbicacionId = Convert.ToInt32(IdnumericUpDown.Value)
             };
 
             return ubicaciones;
@@ -104,16 +89,6 @@ namespace Parcial1_NeysiFM.UI.Registros
         public void LlenaCampos(Ubicaciones ubicaciones)
         {
             DescripcionmetroTextBox.Text = ubicaciones.Descripcion;
-        }
-
-        private void BuscarButton1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void MetroButton2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MetroButton4_Click(object sender, EventArgs e)

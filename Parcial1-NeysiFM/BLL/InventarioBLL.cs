@@ -13,7 +13,7 @@ namespace Parcial1_NeysiFM.BLL
     public class InventarioBLL
     {
         // METODO GUARDAR
-        public static bool Guardar(Inventario inventario)
+        public static bool Guardar(Inventarios inventario)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -57,7 +57,7 @@ namespace Parcial1_NeysiFM.BLL
         }
 
         // METODO MODIFICAR
-        public static bool Modificar(Inventario inventario)
+        public static bool Modificar(Inventarios inventario)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
@@ -79,10 +79,10 @@ namespace Parcial1_NeysiFM.BLL
         }
 
         // METODO BUSCAR
-        public static Inventario Buscar(int id)
+        public static Inventarios Buscar(int id)
         {
             Contexto contexto = new Contexto();
-            Inventario inventario = new Inventario();
+            Inventarios inventario = new Inventarios();
             try
             {
                 inventario = contexto.Inventario.Find(id);
@@ -99,9 +99,9 @@ namespace Parcial1_NeysiFM.BLL
         }
 
         // LISTAR INVENTARIO
-        public static List<Inventario> GetList(Expression<Func<Inventario, bool>> inventario)
+        public static List<Inventarios> GetList(Expression<Func<Inventarios, bool>> inventario)
         {
-            List<Inventario> Lista = new List<Inventario>();
+            List<Inventarios> Lista = new List<Inventarios>();
             Contexto contexto = new Contexto();
             try
             {

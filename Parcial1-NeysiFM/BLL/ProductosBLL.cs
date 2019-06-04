@@ -21,7 +21,7 @@ namespace Parcial1_NeysiFM.BLL
             {
                 if (contexto.Producto.Add(producto) != null)
                 {
-                    Inventario iv = contexto.Inventario.Find(1);
+                    Inventarios iv = contexto.Inventario.Find(1);
                     iv.ValorInventario += producto.ValorInventario;
                     contexto.Entry(iv).State = EntityState.Modified;
 
@@ -47,7 +47,7 @@ namespace Parcial1_NeysiFM.BLL
             try
             {
                 var eliminar = contexto.Producto.Find(Id);
-                Inventario inventario = InventarioBLL.Buscar(1);
+                Inventarios inventario = InventarioBLL.Buscar(1);
                 inventario.ValorInventario -= eliminar.ValorInventario;
                 contexto.Entry(inventario).State = EntityState.Modified;
                 contexto.Entry(eliminar).State = EntityState.Deleted;
@@ -81,7 +81,7 @@ namespace Parcial1_NeysiFM.BLL
                 {
                   valorModificar = producto.ValorInventario - productoAnterior.ValorInventario;
                 }
-                Inventario inventario = InventarioBLL.Buscar(1);
+                Inventarios inventario = InventarioBLL.Buscar(1);
                 if(valorModificar >= 0)
                 {
                   inventario.ValorInventario += valorModificar;

@@ -33,7 +33,7 @@
             this.BuscarmetroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.DescripcionmetroTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.NuevometroButton2 = new MetroFramework.Controls.MetroButton();
             this.GuardarmetroButton3 = new MetroFramework.Controls.MetroButton();
             this.EliminarmetroButton4 = new MetroFramework.Controls.MetroButton();
             this.IdnumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -69,7 +69,6 @@
             this.metroLabel2.Size = new System.Drawing.Size(76, 19);
             this.metroLabel2.TabIndex = 3;
             this.metroLabel2.Text = "Descripcion";
-            this.metroLabel2.Click += new System.EventHandler(this.MetroLabel2_Click);
             // 
             // DescripcionmetroTextBox
             // 
@@ -101,15 +100,14 @@
             this.DescripcionmetroTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.DescripcionmetroTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroButton2
+            // NuevometroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(52, 259);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(75, 23);
-            this.metroButton2.TabIndex = 5;
-            this.metroButton2.Text = "Nuevo";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.MetroButton2_Click);
+            this.NuevometroButton2.Location = new System.Drawing.Point(52, 259);
+            this.NuevometroButton2.Name = "NuevometroButton2";
+            this.NuevometroButton2.Size = new System.Drawing.Size(75, 23);
+            this.NuevometroButton2.TabIndex = 5;
+            this.NuevometroButton2.Text = "Nuevo";
+            this.NuevometroButton2.UseSelectable = true;
             // 
             // GuardarmetroButton3
             // 
@@ -150,14 +148,13 @@
             this.Controls.Add(this.IdnumericUpDown);
             this.Controls.Add(this.EliminarmetroButton4);
             this.Controls.Add(this.GuardarmetroButton3);
-            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.NuevometroButton2);
             this.Controls.Add(this.DescripcionmetroTextBox);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.BuscarmetroButton1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "FUbicaciones";
             this.Text = "Ubicaciones de los Productos";
-            this.Load += new System.EventHandler(this.Ubicaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -171,7 +168,7 @@
         private MetroFramework.Controls.MetroButton BuscarmetroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox DescripcionmetroTextBox;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton NuevometroButton2;
         private MetroFramework.Controls.MetroButton GuardarmetroButton3;
         private MetroFramework.Controls.MetroButton EliminarmetroButton4;
         private System.Windows.Forms.NumericUpDown IdnumericUpDown;

@@ -10,13 +10,13 @@ namespace Parcial1_NeysiFM.Entidades
     public class Ubicaciones
     {
         [Key]
-        public int UbicacionesId { get; set; }
+        public int UbicacionId { get; set; }
         public string Descripcion { get; set; }
 
         // CONTRUCTOR
         public Ubicaciones()
         {
-            UbicacionesId = 0;
+            UbicacionId = 0;
             Descripcion = String.Empty;
         }
     }
