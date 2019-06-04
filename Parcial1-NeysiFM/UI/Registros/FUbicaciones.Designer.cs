@@ -59,6 +59,7 @@
             this.BuscarmetroButton1.TabIndex = 2;
             this.BuscarmetroButton1.Text = "Buscar";
             this.BuscarmetroButton1.UseSelectable = true;
+            this.BuscarmetroButton1.Click += new System.EventHandler(this.BuscarmetroButton1_Click);
             // 
             // metroLabel2
             // 
@@ -141,7 +142,7 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Ubicaciones
+            // FUbicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +155,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.BuscarmetroButton1);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Ubicaciones";
+            this.Name = "FUbicaciones";
             this.Text = "Ubicaciones de los Productos";
             this.Load += new System.EventHandler(this.Ubicaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).EndInit();

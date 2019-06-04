@@ -160,5 +160,15 @@ namespace Parcial1_NeysiFM.UI.Registros
             }
             MessageBox.Show("Error al intentar guardar o modificar el registro!");
         }
+
+        private void BuscarmetroButton1_Click(object sender, EventArgs e)
+        {
+            if (ValidarBuscar() == false)
+            {
+                MessageBox.Show("No existe un producto con este ID");
+                return;
+            }
+            LlenaCampos(UbicacionesBLL.Buscar(Convert.ToInt32(IdnumericUpDown.Value)));
+        }
     }
 }
