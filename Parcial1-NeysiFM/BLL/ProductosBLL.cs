@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Parcial1_NeysiFM.DAL;
-using Parcial1_NeysiFM.Entidades;
 using System.Linq.Expressions;
+using Parcial1_NeysiFM.Entidades;
 
 namespace Parcial1_NeysiFM.BLL
 {
@@ -115,6 +115,8 @@ namespace Parcial1_NeysiFM.BLL
             try
             {
                 producto = contexto.Producto.Find(id);
+                producto.PreciosDetalle.Count();            
+                
             }
             catch (Exception)
             {
@@ -135,6 +137,7 @@ namespace Parcial1_NeysiFM.BLL
             try
             {
                 Lista = contexto.Producto.Where(producto).ToList();
+               // foreach()
             }
             catch (Exception)
             {

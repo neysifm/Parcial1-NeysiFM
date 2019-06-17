@@ -16,6 +16,7 @@ namespace Parcial1_NeysiFM.Entidades
         public int Existencia { get; set; }
         public double Costo { get; set; }
         public double ValorInventario { get; set; }
+        public virtual List<PrecioDetalle> PreciosDetalle { get; set; }
 
         // CONSTRUCTOR
         public Productos()
@@ -25,6 +26,7 @@ namespace Parcial1_NeysiFM.Entidades
             Existencia = 0;
             Costo = 0;
             ValorInventario = 0;
+            PreciosDetalle = new List<PrecioDetalle>();
         }
     }
 }

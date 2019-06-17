@@ -22,6 +22,7 @@ namespace Parcial1_NeysiFM.UI.Registros
             InitializeComponent();
         }
 
+        List<PrecioDetalle> listaPreciosDetalle = new List<PrecioDetalle>();
         public double CalcularInventario()
         {
             Double valorInventario = 0;
@@ -46,11 +47,6 @@ namespace Parcial1_NeysiFM.UI.Registros
           TextBoxValorInventario.Text =   CalcularInventario().ToString();
         }
 
-        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             LimpiarCampos();
@@ -59,15 +55,16 @@ namespace Parcial1_NeysiFM.UI.Registros
 
         public void LlenaCombo()
         {
-            this.metroComboBox1.ValueMember = "Descripcion";
-            this.metroComboBox1.SelectedValue = "UbicacionId";
-            List<Ubicaciones> listaUbicaciones = obtenerUbicaciones();
+            this.metroComboBox1.DisplayMember = "Descripcion";
+            this.metroComboBox1.ValueMember = "UbicacionId";
+            List<Ubicaciones> listaUbicaciones = ObtenerUbicaciones();
             this.metroComboBox1.DataSource = listaUbicaciones;
             this.metroComboBox1.Update();
             if(listaUbicaciones.Count() > 0)
             {
                 metroComboBox1.SelectedIndex = 0;
             }
+            MessageBox.Show(this.metroButton1.ToString());
         }
         private void MetroTileValorInventarioInicio_Click(object sender, EventArgs e)
         {
@@ -137,11 +134,13 @@ namespace Parcial1_NeysiFM.UI.Registros
             TextBoxCosto.Clear();
             TextBoxValorInventario.Clear();
             LimpiarError();
+            dataGridView1.DataSource = null;
+            dataGridView1.Update();
         }
 
         public Productos LlenaClase()
         {
-            MessageBox.Show(metroComboBox1.SelectedValue.ToString());
+           
             Productos producto = new Productos
             {
                 Descripcion = TextBoxDescripcion.Text,
@@ -149,9 +148,11 @@ namespace Parcial1_NeysiFM.UI.Registros
                 Costo = Convert.ToDouble(TextBoxCosto.Text),
                 ValorInventario = Convert.ToDouble(TextBoxValorInventario.Text),
                 ProductosId = Convert.ToInt32(IDnumericUpDown.Value),
-                UbicacionId = Convert.ToInt32(metroComboBox1.SelectedValue.ToString())
-            };
-            return producto;
+                UbicacionId = Convert.ToInt32(metroComboBox1.SelectedValue),
+                PreciosDetalle = this.listaPreciosDetalle
+                    
+                };
+                return producto;
         }
 
         public void LlenaCampos(Productos producto)
@@ -162,6 +163,15 @@ namespace Parcial1_NeysiFM.UI.Registros
             TextBoxValorInventario.Text = producto.ValorInventario.ToString();
             IDnumericUpDown.Value = producto.ProductosId;
             metroComboBox1.SelectedValue = producto.UbicacionId;
+            ActualizarGrid(producto.PreciosDetalle);
+            
+            
+        }
+
+        void ActualizarGrid(List<PrecioDetalle> lista)
+        {
+            this.dataGridView1.DataSource = lista;
+            this.dataGridView1.Update();
         }
 
         public bool ValidarModificar()
@@ -214,7 +224,7 @@ namespace Parcial1_NeysiFM.UI.Registros
             MessageBox.Show("Error al intentar guardar o modificar el registro!");
         }
 
-        public List<Ubicaciones> obtenerUbicaciones()
+        public List<Ubicaciones> ObtenerUbicaciones()
         {
             return UbicacionesBLL.GetList(x => true);
         }
@@ -239,6 +249,63 @@ namespace Parcial1_NeysiFM.UI.Registros
             FUbicaciones FU = new FUbicaciones();
             FU.ShowDialog();
             this.LlenaCombo();
+        }
+
+        private void PreciosdataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void AgregarmetroButton_Click(object sender, EventArgs e)
+        {
+            if(ValidarPrecio())
+            {
+                PrecioDetalle precioDetalle = LlenaPrecio();
+                this.listaPreciosDetalle.Add(precioDetalle);
+                this.ActualizarGrid(listaPreciosDetalle);
+
+            }
+            
+
+
+        }
+
+        private PrecioDetalle LlenaPrecio()
+        {
+            return new PrecioDetalle() {
+                    Precio = Convert.ToDouble(this.PreciometroTextBox.Text),
+                    TipoPrecio = this.TipoPreciometroTextBox.Text
+            };
+        }
+
+        private bool ValidarPrecio()
+        {
+            if(string.IsNullOrEmpty(this.PreciometroTextBox.Text) || string.IsNullOrEmpty(this.TipoPreciometroTextBox.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBoxDescripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
